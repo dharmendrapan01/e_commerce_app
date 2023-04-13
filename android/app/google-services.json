@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1074756526614",
+    "project_id": "smart-c24c4",
+    "storage_bucket": "smart-c24c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074756526614:android:223807e0e57340e6c44b37",
+        "android_client_info": {
+          "package_name": "com.example.e_commerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1074756526614-b8m6tb8hi4f9gp495559uicui6bved02.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.e_commerce_app",
+            "certificate_hash": "473158906a2c83876daeb998278d7861a3acce78"
+          }
+        },
+        {
+          "client_id": "1074756526614-9lv97nrojlect5psel5qbcirp6vprrdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7Txmm3ifXVDqNE5MVIjFG7IFU588L-Xs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1074756526614-9lv97nrojlect5psel5qbcirp6vprrdj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
