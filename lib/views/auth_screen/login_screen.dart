@@ -43,21 +43,22 @@ class LoginScreen extends StatelessWidget {
                   controller.isLoading.value ? const CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation(redColor),
                   ) : ourButton(onPress: () async {
-                    controller.isLoading(true);
-                    await controller.loginMethod(context: context).then((value) {
-                      if(value == null){
-                        auth.authStateChanges().listen((User? user) {
-                          if(user != null){
-                            Get.to(() => const Home());
-                          }
-                        });
-                        controller.isLoading(false);
-                        VxToast.show(context, msg: loggedIn);
-                        // Get.offAll(() => const Home());
-                      }else{
-                        controller.isLoading(false);
-                      }
-                    });
+                    controller.loginMethod(context: context);
+                    // controller.isLoading(true);
+                    // await controller.loginMethod(context: context).then((value) {
+                    //   if(value == null){
+                    //     auth.authStateChanges().listen((User? user) {
+                    //       if(user != null){
+                    //         Get.to(() => const Home());
+                    //       }
+                    //     });
+                    //     controller.isLoading(false);
+                    //     VxToast.show(context, msg: loggedIn);
+                    //     // Get.offAll(() => const Home());
+                    //   }else{
+                    //     controller.isLoading(false);
+                    //   }
+                    // });
                   }, color: redColor, textColor: whiteColor, title: login).box.width(context.screenWidth - 50).make(),
                   5.heightBox,
                   createNewAccount.text.color(fontGrey).make(),

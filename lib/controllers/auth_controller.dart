@@ -6,6 +6,8 @@ import 'package:e_commerce_app/consts/consts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
+import '../views/home_screen/home.dart';
+
 class AuthController extends GetxController{
   var isLoading = false.obs;
 
@@ -13,26 +15,18 @@ class AuthController extends GetxController{
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
 
-  // login method
-  Future<UserCredential?> loginMethod({context}) async {
-    UserCredential? userCredential;
-    try{
-      await auth.signInWithEmailAndPassword(email: emailController.text, password: passwordController.text);
-    } on FirebaseAuthException catch(e){
-      VxToast.show(context, msg: e.toString());
-    }
-    return userCredential;
+  void loginMethod({context}) {
+    isLoading(true);
+    auth.signInWithEmailAndPassword(email: emailController.text, password: passwordController.text).then((value) {
+      isLoading(false);
+      Get.to(() => const Home());
+      VxToast.show(context, msg: "Logged in successfully");
+    }).onError((error, stackTrace) {
+      isLoading(false);
+      VxToast.show(context, msg: error.toString());
+    });
   }
 
-  // SIGN IN METHOD
-  // Future<String?> signIn({context}) async {
-  //   try {
-  //     await auth.signInWithEmailAndPassword(email: emailController.text, password: passwordController.text);
-  //     return null;
-  //   } on FirebaseAuthException catch (e) {
-  //     return e.message;
-  //   }
-  // }
 
 
   // signup method
